@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="60%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#030712" />
+    </radialGradient>
+    
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="30%" stop-color="#4facfe" />
+      <stop offset="70%" stop-color="#7209b7" />
+      <stop offset="100%" stop-color="#f72585" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+
+    <linearGradient id="helixStrandA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <linearGradient id="helixStrandB" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="50%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="coreGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep Dark Base -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGlow)" />
+  
+  <!-- Outer Subtle Tech Grid Ring -->
+  <circle cx="256" cy="256" r="236" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="6 8" />
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#ringGrad)" stroke-width="3" opacity="0.4" />
+  
+  <!-- Hexagonal Molecular Boundary -->
+  <polygon points="256,56 429,156 429,356 256,456 83,356 83,156" 
+           fill="none" stroke="url(#ringGrad)" stroke-width="4" stroke-linejoin="round" opacity="0.85" filter="url(#softGlow)" />
+
+  <!-- Node Dots at Hexagon Vertices -->
+  <circle cx="256" cy="56" r="6" fill="#00f2fe" filter="url(#softGlow)" />
+  <circle cx="429" cy="156" r="6" fill="#4facfe" filter="url(#softGlow)" />
+  <circle cx="429" cy="356" r="6" fill="#7209b7" filter="url(#softGlow)" />
+  <circle cx="256" cy="456" r="6" fill="#f72585" filter="url(#softGlow)" />
+  <circle cx="83" cy="356" r="6" fill="#a855f7" filter="url(#softGlow)" />
+  <circle cx="83" cy="156" r="6" fill="#38bdf8" filter="url(#softGlow)" />
+
+  <!-- Inner Molecular Ring & Orbit -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.6" />
+  <ellipse cx="256" cy="256" rx="190" ry="85" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.25" transform="rotate(-30 256 256)" />
+  <ellipse cx="256" cy="256" rx="190" ry="85" fill="none" stroke="#f43f5e" stroke-width="1.5" opacity="0.25" transform="rotate(30 256 256)" />
+
+  <!-- Central High-Tech DNA Double Helix Representation -->
+  <!-- Hydrogen Base Pair Bridges / Data Conduits -->
+  <g opacity="0.75" stroke-width="3">
+    <!-- Level 1 (Top) -->
+    <line x1="210" y1="120" x2="302" y2="120" stroke="#38bdf8" stroke-dasharray="3 3" />
+    <circle cx="210" cy="120" r="5" fill="#00f2fe" />
+    <circle cx="256" cy="120" r="3" fill="#ffffff" />
+    <circle cx="302" cy="120" r="5" fill="#f43f5e" />
+
+    <!-- Level 2 -->
+    <line x1="180" y1="165" x2="332" y2="165" stroke="#60a5fa" stroke-dasharray="3 3" />
+    <circle cx="180" cy="165" r="5.5" fill="#00f2fe" />
+    <circle cx="256" cy="165" r="3.5" fill="#ffffff" />
+    <circle cx="332" cy="165" r="5.5" fill="#fb7185" />
+
+    <!-- Level 3 -->
+    <line x1="195" y1="210" x2="317" y2="210" stroke="#818cf8" stroke-dasharray="3 3" />
+    <circle cx="195" cy="210" r="5" fill="#38bdf8" />
+    <circle cx="256" cy="210" r="3" fill="#ffffff" />
+    <circle cx="317" cy="210" r="5" fill="#f43f5e" />
+
+    <!-- Level 4 (Center crossover) -->
+    <line x1="240" y1="256" x2="272" y2="256" stroke="#a78bfa" stroke-dasharray="2 2" />
+    <circle cx="256" cy="256" r="7" fill="#ffffff" filter="url(#softGlow)" />
+
+    <!-- Level 5 -->
+    <line x1="317" y1="302" x2="195" y2="302" stroke="#818cf8" stroke-dasharray="3 3" />
+    <circle cx="317" cy="302" r="5" fill="#00f2fe" />
+    <circle cx="256" cy="302" r="3" fill="#ffffff" />
+    <circle cx="195" cy="302" r="5" fill="#f43f5e" />
+
+    <!-- Level 6 -->
+    <line x1="332" y1="347" x2="180" y2="347" stroke="#60a5fa" stroke-dasharray="3 3" />
+    <circle cx="332" cy="347" r="5.5" fill="#38bdf8" />
+    <circle cx="256" cy="347" r="3.5" fill="#ffffff" />
+    <circle cx="180" cy="347" r="5.5" fill="#fb7185" />
+
+    <!-- Level 7 (Bottom) -->
+    <line x1="302" y1="392" x2="210" y2="392" stroke="#38bdf8" stroke-dasharray="3 3" />
+    <circle cx="302" cy="392" r="5" fill="#00f2fe" />
+    <circle cx="256" cy="392" r="3" fill="#ffffff" />
+    <circle cx="210" cy="392" r="5" fill="#f43f5e" />
+  </g>
+
+  <!-- Glowing Strand A (Left to Right Sine Curve Wave) -->
+  <path d="M 210,120 C 140,165 140,210 256,256 C 372,302 372,347 302,392" 
+        fill="none" stroke="url(#helixStrandA)" stroke-width="9" stroke-linecap="round" filter="url(#coreGlow)" />
+  <path d="M 210,120 C 140,165 140,210 256,256 C 372,302 372,347 302,392" 
+        fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+
+  <!-- Glowing Strand B (Right to Left Sine Curve Wave) -->
+  <path d="M 302,120 C 372,165 372,210 256,256 C 140,302 140,347 210,392" 
+        fill="none" stroke="url(#helixStrandB)" stroke-width="9" stroke-linecap="round" filter="url(#coreGlow)" />
+  <path d="M 302,120 C 372,165 372,210 256,256 C 140,302 140,347 210,392" 
+        fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+
+  <!-- Neural Network Computational Nodes Overlay -->
+  <g filter="url(#softGlow)">
+    <circle cx="160" cy="256" r="4" fill="#38bdf8" />
+    <line x1="160" y1="256" x2="195" y2="210" stroke="#38bdf8" stroke-width="1.5" opacity="0.6" />
+    <line x1="160" y1="256" x2="195" y2="302" stroke="#38bdf8" stroke-width="1.5" opacity="0.6" />
+
+    <circle cx="352" cy="256" r="4" fill="#ec4899" />
+    <line x1="352" y1="256" x2="317" y2="210" stroke="#ec4899" stroke-width="1.5" opacity="0.6" />
+    <line x1="352" y1="256" x2="317" y2="302" stroke="#ec4899" stroke-width="1.5" opacity="0.6" />
+
+    <circle cx="256" cy="188" r="4" fill="#34d399" />
+    <circle cx="256" cy="324" r="4" fill="#34d399" />
+  </g>
+</svg>

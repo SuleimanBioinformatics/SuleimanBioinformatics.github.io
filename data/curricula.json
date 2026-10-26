@@ -1,0 +1,137 @@
+[
+  {
+    "id": "bio-01",
+    "category": "Biopython",
+    "title": "Module 01: Sequence Basics & Bio.Seq",
+    "description": "Biological string representations, nucleotide alphabets, standard IUPAC definitions, and Seq object transformations.",
+    "tags": ["Biopython", "Genomics", "Bio.Seq"],
+    "level": "Beginner",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/1"
+  },
+  {
+    "id": "bio-02",
+    "category": "Biopython",
+    "title": "Module 02: Transcription & Translation",
+    "description": "Coding vs. template strand mechanics, codon mapping, stop-codon terminations, and open reading frame (ORF) extraction.",
+    "tags": ["Biopython", "Genomics", "Transcription"],
+    "level": "Beginner",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/2"
+  },
+  {
+    "id": "bio-05",
+    "category": "Biopython",
+    "title": "Module 05: FASTA & GenBank I/O (Bio.SeqIO)",
+    "description": "High-throughput stream parsing of massive FASTA and multi-record GenBank flatfiles using Bio.SeqIO.parse iterator paradigms.",
+    "tags": ["Biopython", "SeqIO", "FASTA", "GenBank"],
+    "level": "Intermediate",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/5"
+  },
+  {
+    "id": "bio-10",
+    "category": "Biopython",
+    "title": "Module 10: NCBI Entrez API Programmatic Querying",
+    "description": "Connecting to NCBI E-utilities via Bio.Entrez (ESearch, EFetch, ESummary) for PubMed, GenBank, and Nucleotide lookups.",
+    "tags": ["Biopython", "NCBI", "Entrez", "API"],
+    "level": "Intermediate",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/10"
+  },
+  {
+    "id": "bio-15",
+    "category": "Biopython",
+    "title": "Module 15: Multiple Sequence Alignment (Bio.AlignIO)",
+    "description": "ClustalW, MUSCLE, and PHYLIP format parsing, consensus sequence generation, and evolutionary substitution profiling.",
+    "tags": ["Biopython", "AlignIO", "MSA", "Evolution"],
+    "level": "Intermediate",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/15"
+  },
+  {
+    "id": "bio-20",
+    "category": "Biopython",
+    "title": "Module 20: BLAST Automation & XML Parsing",
+    "description": "qblast remote submission, local BLAST+ executable wrapping, and HSP (High Scoring Pair) parameter extraction.",
+    "tags": ["Biopython", "BLAST", "Sequence Alignment"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/20"
+  },
+  {
+    "id": "bio-25",
+    "category": "Biopython",
+    "title": "Module 25: Macromolecular Structural Biology (Bio.PDB)",
+    "description": "SMCRA (Structure, Model, Chain, Residue, Atom) hierarchy, vector math, torsion angles (phi/psi), and SASA calculations.",
+    "tags": ["Biopython", "Bio.PDB", "3D Protein", "Structural"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/25"
+  },
+  {
+    "id": "bio-30",
+    "category": "Biopython",
+    "title": "Module 30: End-to-End Metagenomics & Capstone Pipeline",
+    "description": "Automated pipeline uniting QC, assembly, taxonomic classification, and phylogenetic tree rendering.",
+    "tags": ["Biopython", "Metagenomics", "Pipeline", "Capstone"],
+    "level": "Mastery",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/biopython/30"
+  },
+  {
+    "id": "cam-03",
+    "category": "Machine Learning",
+    "title": "Cambridge ML: Bias-Variance Tradeoff & CV",
+    "description": "Decomposition of mean squared error into intrinsic noise, squared bias, and variance across $k$-fold cross-validation.",
+    "tags": ["Cambridge ML", "Statistical Learning", "Mathematics"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/03_bias_variance_tradeoff_and_CV.R"
+  },
+  {
+    "id": "cam-12",
+    "category": "Machine Learning",
+    "title": "Cambridge ML: L1 vs L2 Regularization in High Dimensions",
+    "description": "Sparsity induction via $L_1$ norm (Lasso) vs $L_2$ shrinkage (Ridge) in genomic $p \\gg n$ expression regimes.",
+    "tags": ["Cambridge ML", "Lasso", "Ridge", "High-Dimensional"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/12_l1_vs_l2.R"
+  },
+  {
+    "id": "cam-15",
+    "category": "Machine Learning",
+    "title": "Cambridge ML: AdaBoost & Gradient Boosting Theory",
+    "description": "Exponential loss minimization, weak learner reweighting dynamics, and functional gradient descent in hypothesis spaces.",
+    "tags": ["Cambridge ML", "AdaBoost", "Boosting", "Ensemble"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/15_Adaboost_demo.R"
+  },
+  {
+    "id": "wiki-deseq2",
+    "category": "Genomics",
+    "title": "Differential Expression (DESeq2) Architecture",
+    "description": "Negative binomial dispersion shrinkage, size-factor geometric mean normalization, and Wald statistical hypothesis testing.",
+    "tags": ["RNA-seq", "DESeq2", "Statistics", "Transcriptomics"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/wiki/concepts/Differential-Gene-Expression-DESeq2.md"
+  },
+  {
+    "id": "wiki-af2",
+    "category": "Structural Biophysics",
+    "title": "AlphaFold DB Programmatic API & Coordinates",
+    "description": "Automated retrieval of predicted 3D coordinates (mmCIF/PDB), per-residue pLDDT confidence scoring, and PAE matrices.",
+    "tags": ["AlphaFold", "3D Structure", "Biophysics", "AI"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/wiki/concepts/AlphaFold-Programmatic-API.md"
+  },
+  {
+    "id": "wiki-mj",
+    "category": "Structural Biophysics",
+    "title": "Miyazawa-Jernigan Statistical Contact Potentials",
+    "description": "Quasi-chemical energy potentials based on observed pairwise non-bonded amino acid contacts within protein crystal structures.",
+    "tags": ["Biophysics", "Miyazawa-Jernigan", "Thermodynamics"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/wiki/concepts/Miyazawa-Jernigan-Potentials.md"
+  },
+  {
+    "id": "wiki-chip",
+    "category": "Genomics",
+    "title": "ChIP-Seq Peak Calling & TF Binding Loci",
+    "description": "Cross-correlation analysis, fragment length estimation, and Poisson / dynamic lambda background modeling using MACS2.",
+    "tags": ["ChIP-Seq", "Epigenetics", "MACS2", "Peak Calling"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/wiki/concepts/ChIP-Seq-Peak-Calling.md"
+  }
+]

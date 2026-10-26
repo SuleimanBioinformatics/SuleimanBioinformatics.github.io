@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuleimanBioinformatics | Computational Biology & Genomic Intelligence Hub</title>
+  
+  <meta name="description" content="Centralized hub for computational biology, biophysics, genomics pipelines, Biopython training curricula, and Cambridge University machine learning mathematics." />
+  <meta name="keywords" content="Bioinformatics, Computational Biology, Genomics, Biopython, AlphaFold, Machine Learning, Kyte-Doolittle, GC Skew, Cambridge ML, Suleiman Hajizadeh" />
+  <meta name="author" content="Suleiman Hajizadeh" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SuleimanBioinformatics | Computational Biology & Genomic Intelligence" />
+  <meta property="og:description" content="The centralized research and educational engine for genomics, biophysics, and machine learning." />
+  <meta property="og:url" content="https://suleimanbioinformatics.github.io/" />
+  <meta property="og:image" content="assets/logo-emblem.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Ambient Glow Background -->
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="brand-link" aria-label="SuleimanBioinformatics Home">
+        <img src="assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" class="brand-logo-img" />
+        <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#overview" class="nav-link">Overview</a></li>
+          <li><a href="#interactive-studio" class="nav-link">Live Studio</a></li>
+          <li><a href="#curricula" class="nav-link">Curricula</a></li>
+          <li><a href="#ecosystem" class="nav-link">Ecosystem</a></li>
+          <li><a href="#leadership" class="nav-link">Leadership</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="btn-icon" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+
+        <a href="https://github.com/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="View on GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub Org
+        </a>
+
+        <button class="mobile-nav-toggle btn-icon" aria-label="Toggle navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Computational Biology & Genomic Intelligence Hub
+        </div>
+
+        <h1 class="hero-title">
+          Pioneering Open Science in <br />
+          <span class="brand-title-accent">Genomics & Structural Biophysics</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          An integrated ecosystem uniting rigorous Biopython workflows, Oxford Nanopore metagenomics, 3D AlphaFold structural mechanics, and Cambridge University machine learning mathematics.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#interactive-studio" class="btn-primary">
+            Launch Interactive Tools
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#curricula" class="btn-outline">
+            Browse Curricula & Wiki
+          </a>
+          <a href="https://github.com/SuleimanBioinformatics/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            Backend Data Repository
+          </a>
+        </div>
+
+        <!-- Metric Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">30</div>
+            <div class="stat-label">Biopython Core Modules</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Cambridge ML Math Covered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Networked Wiki Syntheses</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Real-Time</div>
+            <div class="stat-label">In-Browser Biophysics Engines</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live Studio Section -->
+    <section id="interactive-studio" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Live Client-Side Suite</span>
+          <h2 class="section-title">Interactive Bioinformatics Studio</h2>
+          <p class="section-desc">Test algorithms instantly in your browser: compute GC-skew windowing, analyze Kyte-Doolittle hydropathy profiles, and inspect 3D biomolecular coordinate structures.</p>
+        </div>
+
+        <!-- Studio Tab Controls -->
+        <div class="tools-tabs" role="tablist">
+          <button class="tool-tab-btn active" data-target="tabGenomics" role="tab" aria-selected="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            Genomic GC-Skew Analyzer
+          </button>
+          <button class="tool-tab-btn" data-target="tabHydropathy" role="tab" aria-selected="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+            Kyte-Doolittle Hydropathy Profile
+          </button>
+          <button class="tool-tab-btn" data-target="tabProtein3D" role="tab" aria-selected="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            3D Biomolecular Structure Viewer
+          </button>
+        </div>
+
+        <!-- Panel 1: Genomic Analyzer -->
+        <div id="tabGenomics" class="tool-panel active" role="tabpanel">
+          <div class="tool-grid">
+            <div class="tool-input-group">
+              <div class="input-label">
+                <span>DNA Sequence (Raw or FASTA):</span>
+                <div class="preset-btns">
+                  <button class="preset-btn" data-dna-preset="ecoli_ori">E. coli oriC</button>
+                  <button class="preset-btn" data-dna-preset="tnbc_exon">TNBC Exon</button>
+                  <button class="preset-btn" data-dna-preset="synthetic_skew">High Skew</button>
+                </div>
+              </div>
+              <textarea id="genomicSeqInput" class="sequence-textarea" spellcheck="false" placeholder="Paste FASTA or raw DNA sequence..."></textarea>
+
+              <div class="slider-group">
+                <label for="gcWindowSlider" style="font-size:0.85rem;color:var(--text-secondary);">Window Size:</label>
+                <input type="range" id="gcWindowSlider" min="20" max="150" step="10" value="50" />
+                <span id="gcWindowVal" class="slider-val">50 bp</span>
+              </div>
+            </div>
+
+            <div class="tool-output">
+              <div class="metrics-summary-row">
+                <div class="mini-metric">
+                  <div id="metricSeqLen" class="mini-metric-val">0</div>
+                  <div class="mini-metric-lbl">Length (bp)</div>
+                </div>
+                <div class="mini-metric">
+                  <div id="metricGCContent" class="mini-metric-val">0%</div>
+                  <div class="mini-metric-lbl">GC Content</div>
+                </div>
+                <div class="mini-metric">
+                  <div id="metricGCSkew" class="mini-metric-val">0.00</div>
+                  <div class="mini-metric-lbl">GC Skew</div>
+                </div>
+                <div class="mini-metric">
+                  <div id="metricBaseCounts" class="mini-metric-val" style="font-size:0.85rem;padding-top:4px;">-</div>
+                  <div class="mini-metric-lbl">Base Counts</div>
+                </div>
+              </div>
+
+              <!-- SVG Chart -->
+              <div class="chart-wrapper">
+                <div id="gcSkewChartBox"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Kyte-Doolittle Hydropathy Profile -->
+        <div id="tabHydropathy" class="tool-panel" role="tabpanel">
+          <div class="tool-grid">
+            <div class="tool-input-group">
+              <div class="input-label">
+                <span>Amino Acid Sequence:</span>
+                <div class="preset-btns">
+                  <button class="preset-btn" data-pep-preset="insulin_a">Insulin Chain A</button>
+                  <button class="preset-btn" data-pep-preset="transmembrane">Transmembrane</button>
+                  <button class="preset-btn" data-pep-preset="signal_peptide">Signal Peptide</button>
+                </div>
+              </div>
+              <textarea id="peptideSeqInput" class="sequence-textarea" spellcheck="false" placeholder="Paste 1-letter amino acid sequence..."></textarea>
+
+              <div class="slider-group">
+                <label for="kdWindowSlider" style="font-size:0.85rem;color:var(--text-secondary);">Window Radius ($2w+1$):</label>
+                <input type="range" id="kdWindowSlider" min="5" max="21" step="2" value="9" />
+                <span id="kdWindowVal" class="slider-val">9 aa</span>
+              </div>
+            </div>
+
+            <div class="tool-output">
+              <div class="metrics-summary-row">
+                <div class="mini-metric">
+                  <div id="metricPepLen" class="mini-metric-val">0</div>
+                  <div class="mini-metric-lbl">Residues</div>
+                </div>
+                <div class="mini-metric">
+                  <div id="metricAvgHydropathy" class="mini-metric-val">0.00</div>
+                  <div class="mini-metric-lbl">Mean Hydropathy</div>
+                </div>
+                <div class="mini-metric">
+                  <div id="metricMaxPeak" class="mini-metric-val">0.00</div>
+                  <div class="mini-metric-lbl">Max Peak</div>
+                </div>
+              </div>
+
+              <!-- SVG Chart -->
+              <div class="chart-wrapper">
+                <div id="hydropathyChartBox"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: 3D Protein Canvas Viewer -->
+        <div id="tabProtein3D" class="tool-panel" role="tabpanel">
+          <div class="protein-viewer-box">
+            <canvas id="proteinCanvas3D" class="protein-canvas"></canvas>
+
+            <div class="viewer-overlay">
+              <span id="viewerStructLabel" class="viewer-tag">Human Insulin (1COH Model)</span>
+              <span class="viewer-tag" style="color:var(--text-muted);font-size:0.75rem;">Interactive 3D: Click &amp; Drag to Rotate · Scroll to Zoom</span>
+            </div>
+
+            <div class="viewer-controls">
+              <button class="viewer-btn active" data-struct-preset="insulin">Insulin (1COH)</button>
+              <button class="viewer-btn" data-struct-preset="helix">Alpha Helix</button>
+              <button class="viewer-btn" data-struct-preset="dna">DNA Double Helix</button>
+              <button id="resetViewBtn" class="viewer-btn" title="Reset View">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curricula & Research Wiki Knowledge Explorer -->
+    <section id="curricula" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Knowledge Architecture</span>
+          <h2 class="section-title">Curricula &amp; Research Wiki Explorer</h2>
+          <p class="section-desc">Search through 30 Biopython computational modules, Cambridge machine learning mathematics lectures, and interlinked genomics concept syntheses.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar-wrap">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="curriculaSearchInput" class="search-input" placeholder="Search modules, concepts, or algorithms (e.g. DESeq2, BLAST, AdaBoost)..." />
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="category-filter-chips">
+          <button class="filter-chip active" data-category="All">All Topics</button>
+          <button class="filter-chip" data-category="Biopython">Biopython Curriculum</button>
+          <button class="filter-chip" data-category="Machine Learning">Cambridge ML Math</button>
+          <button class="filter-chip" data-category="Genomics">Genomics &amp; Sequencing</button>
+          <button class="filter-chip" data-category="Structural Biophysics">Structural Biophysics</button>
+        </div>
+
+        <!-- Dynamic Card Grid -->
+        <div id="curriculaCardsGrid" class="curricula-cards-grid">
+          <!-- Dynamically populated from data/curricula.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Organization Ecosystem Grid -->
+    <section id="ecosystem" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">The Network</span>
+          <h2 class="section-title">SuleimanBioinformatics Ecosystem</h2>
+          <p class="section-desc">Explore our synchronized repositories, specialized pipelines, and open-source computational tools.</p>
+        </div>
+
+        <div class="ecosystem-grid">
+          <div class="eco-card">
+            <div class="eco-icon" style="color:var(--accent-cyan);">🧬</div>
+            <h3 class="eco-title">Core Backend &amp; Data Hub</h3>
+            <p class="eco-desc">Hosts datasets, starter kit scripts, 30 Biopython modules, Cambridge ML R lectures, and the Obsidian knowledge vault.</p>
+            <a href="https://github.com/SuleimanBioinformatics/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;padding:0.45rem 1rem;">
+              View Repository →
+            </a>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon" style="color:var(--accent-purple);">📊</div>
+            <h3 class="eco-title">Bioinformatics-analysis</h3>
+            <p class="eco-desc">High-throughput transcriptomics, Triple-Negative Breast Cancer (TNBC) RNA-seq differential expression, and clinical machine learning.</p>
+            <a href="https://github.com/SuleimanHajizadeh/Bioinformatics-analysis" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;padding:0.45rem 1rem;">
+              View Repository →
+            </a>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon" style="color:var(--accent-pink);">🔬</div>
+            <h3 class="eco-title">Structural Biology (3D Protein AI)</h3>
+            <p class="eco-desc">AKT1/STN7 kinase modeling, AlphaFold coordinate parsing, molecular docking, and binding affinity simulations.</p>
+            <a href="https://github.com/SuleimanHajizadeh/computational-structural-biology" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;padding:0.45rem 1rem;">
+              View Repository →
+            </a>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon" style="color:var(--accent-emerald);">🌿</div>
+            <h3 class="eco-title">MEGA Software Genetics</h3>
+            <p class="eco-desc">COL1A1 multi-species sequence alignments, phylogenetic tree reconstruction, and evolutionary distance modeling.</p>
+            <a href="https://github.com/SuleimanHajizadeh/MEGA-Software-Molecular-Evolutionary-Genetics-Analysis" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;padding:0.45rem 1rem;">
+              View Repository →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & About -->
+    <section id="leadership" class="section">
+      <div class="container">
+        <div class="about-card">
+          <div class="profile-avatar-box">
+            <img src="assets/logo-emblem.png" alt="SuleimanBioinformatics Emblem" class="profile-avatar-img" />
+          </div>
+
+          <div>
+            <h2 class="about-name">Suleiman Hajizadeh</h2>
+            <div class="about-role">Bioinformatician &amp; Computational Biologist</div>
+            <p class="about-bio">
+              Researcher at the Institute of Molecular Biology and Biotechnologies (IMBB), Azerbaijan. Specializing in high-throughput transcriptomics, oncogenomic clinical modeling, macromolecular biophysics, and applying Cambridge mathematical machine learning theory to biological sequences.
+            </p>
+            <div class="about-socials">
+              <a href="mailto:suleyman.hacizade1@gmail.com" class="btn-primary" style="font-size:0.85rem;padding:0.5rem 1.1rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Email Contact
+              </a>
+              <a href="https://github.com/SuleimanHajizadeh" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;padding:0.5rem 1.1rem;">
+                Personal GitHub
+              </a>
+              <a href="https://github.com/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;padding:0.5rem 1.1rem;">
+                Organization Hub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-link">
+            <img src="assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" style="width:30px;height:30px;" />
+            <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+          </a>
+          <p>
+            An open-science initiative providing computational biology frameworks, algorithmic starter kits, and structured bioinformatics education.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Repositories</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/SuleimanBioinformatics/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer">Core Data &amp; Pipelines</a></li>
+            <li><a href="https://github.com/SuleimanBioinformatics/SuleimanBioinformatics.github.io" target="_blank" rel="noopener noreferrer">Frontend Web Portal</a></li>
+            <li><a href="https://github.com/SuleimanHajizadeh/Bioinformatics-analysis" target="_blank" rel="noopener noreferrer">Transcriptomic Analysis</a></li>
+            <li><a href="https://github.com/SuleimanHajizadeh/computational-structural-biology" target="_blank" rel="noopener noreferrer">3D Structural Biology</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Curricula</h4>
+          <ul class="footer-links">
+            <li><a href="#curricula">30-Module Biopython</a></li>
+            <li><a href="#curricula">Cambridge ML Math</a></li>
+            <li><a href="#curricula">Oxford Nanopore Protocols</a></li>
+            <li><a href="#curricula">Obsidian Knowledge Vault</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 SuleimanBioinformatics. Released under the MIT License.</div>
+        <div>Built for the global bioinformatics &amp; computational biology community.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/tools.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
