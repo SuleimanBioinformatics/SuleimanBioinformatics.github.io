@@ -81,6 +81,33 @@
     "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/03_bias_variance_tradeoff_and_CV.R"
   },
   {
+    "id": "cam-04",
+    "category": "Machine Learning",
+    "title": "Cambridge ML: Decision Trees & Cost-Complexity Pruning",
+    "description": "Top-down recursive partitioning, greedy binary splitting, and weak-link cost-complexity regularized tree pruning.",
+    "tags": ["Decision Trees", "CART", "Pruning", "Cambridge ML"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/04_trees.R"
+  },
+  {
+    "id": "cam-05",
+    "category": "Machine Learning",
+    "title": "Cambridge ML: Random Forests & Out-Of-Bag Error",
+    "description": "De-correlating tree ensembles via random feature subspacing and obtaining unbiased out-of-bag validation bounds.",
+    "tags": ["Random Forest", "Bagging", "OOB", "Ensemble"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/05_random_forest.R"
+  },
+  {
+    "id": "cam-09",
+    "category": "Machine Learning",
+    "title": "Cambridge ML: Reproducing Kernel Hilbert Spaces (RKHS)",
+    "description": "Infinite-dimensional function spaces, the Riesz Representation Theorem, and the Kimeldorf-Wahba Representer Theorem.",
+    "tags": ["RKHS", "Kernels", "Hilbert Space", "Functional Analysis"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/09_vector_space_of_fns.R"
+  },
+  {
     "id": "cam-12",
     "category": "Machine Learning",
     "title": "Cambridge ML: L1 vs L2 Regularization in High Dimensions",
@@ -97,6 +124,33 @@
     "tags": ["Cambridge ML", "AdaBoost", "Boosting", "Ensemble"],
     "level": "Advanced",
     "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/15_Adaboost_demo.R"
+  },
+  {
+    "id": "cam-16",
+    "category": "Machine Learning",
+    "title": "Cambridge ML: Forward Stagewise Boosting & Lasso Equivalence",
+    "description": "Mathematical proof that infinitesimal Forward Stagewise linear boosting traces the exact continuous Lasso path.",
+    "tags": ["Gradient Boosting", "Lasso", "Forward Stagewise", "Proofs"],
+    "level": "Mastery",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/cambridge_ml_math/R_lectures/16_Gradient_boosting_linear.R"
+  },
+  {
+    "id": "wcu-abm",
+    "category": "Structural Biophysics",
+    "title": "Agent-Based Modeling & Wa-Tor Marine Lattice",
+    "description": "Simulating non-linear predator-prey limit cycles and spatial wave-fronts on discrete toroidal cellular automata grids.",
+    "tags": ["ABM", "Wa-Tor", "Cellular Automata", "Biomathematics"],
+    "level": "Intermediate",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/wcu_comp_biomath"
+  },
+  {
+    "id": "wcu-boids",
+    "category": "Structural Biophysics",
+    "title": "Boids Collective Swarming & Evasive Kinematics",
+    "description": "Craig Reynolds steering forces (separation, alignment, cohesion) and predator avoidance kinetics in collective biology.",
+    "tags": ["Boids", "Flocking", "Kinematics", "Swarm Intelligence"],
+    "level": "Intermediate",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/courses/wcu_comp_biomath"
   },
   {
     "id": "wiki-deseq2",
@@ -133,5 +187,14 @@
     "tags": ["ChIP-Seq", "Epigenetics", "MACS2", "Peak Calling"],
     "level": "Advanced",
     "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/wiki/concepts/ChIP-Seq-Peak-Calling.md"
+  },
+  {
+    "id": "career-academic",
+    "category": "Genomics",
+    "title": "Academic Scientific Communication & Cambridge MPhil Roadmap",
+    "description": "Statistical reporting precision, research dissemination conventions, and master's application strategy for Cambridge University.",
+    "tags": ["Communication", "Cambridge MPhil", "Scientific Writing"],
+    "level": "Advanced",
+    "repo": "https://github.com/SuleimanBioinformatics/SuleimanBioinformatics/tree/main/career/IELTS_preparation_plan.md"
   }
 ]
