@@ -11,9 +11,16 @@
 <p align="center">
   <a href="https://suleimanbioinformatics.github.io/"><img src="https://img.shields.io/badge/Live_Site-suleimanbioinformatics.github.io-00f2fe?style=flat-square&logo=google-chrome&logoColor=white" alt="Live Site"/></a>
   <a href="https://github.com/SuleimanBioinformatics"><img src="https://img.shields.io/badge/Organization-SuleimanBioinformatics-7209b7?style=flat-square&logo=github&logoColor=white" alt="Organization"/></a>
-  <a href="https://github.com/SuleimanBioinformatics/SuleimanBioinformatics"><img src="https://img.shields.io/badge/Core_Backend_Repo-SuleimanBioinformatics-38bdf8?style=flat-square&logo=github&logoColor=white" alt="Backend Repo"/></a>
+  <a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20SuleimanBioinformatics%20Private%20Repository"><img src="https://img.shields.io/badge/Core_Data_&_Backend-🔒_PRIVATE_(Request_Access)-f43f5e?style=flat-square&logo=github&logoColor=white" alt="Private Backend Repo"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License: MIT"/></a>
 </p>
+
+---
+
+> [!IMPORTANT]
+> ### 🔒 Data Privacy & Access Policy (Məlumatlara Giriş)
+> - **EN:** The core computational datasets, algorithms, and 76-page research vault (`SuleimanBioinformatics`) are hosted in a **Private Repository**. To request researcher or academic access, please email **[suleyman.hacizade1@gmail.com](mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20SuleimanBioinformatics%20Private%20Repository)**.
+> - **AZ:** Əsas datalar, alqoritmik skriptlər və arxa plan kod bazası (`SuleimanBioinformatics`) **qapalıdır (Private)**. Giriş (access) əldə etmək istəyirsinizsə, elektron poçt ünvanıma müraciət edə bilərsiniz: **[suleyman.hacizade1@gmail.com](mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20SuleimanBioinformatics%20Private%20Repository)**.
 
 ---
 

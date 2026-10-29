@@ -302,7 +302,8 @@ function renderCurricula(items) {
       </div>
       <div class="card-footer">
         <span class="level-badge">${item.level}</span>
-        <a href="${item.repo}" target="_blank" rel="noopener noreferrer" class="card-action-link">
+        <span class="private-badge-pill" style="font-size:0.68rem;padding:0.15rem 0.5rem;" title="Repository is Private. Contact suleyman.hacizade1@gmail.com for access.">🔒 Private</span>
+        <a href="${item.repo}" target="_blank" rel="noopener noreferrer" class="card-action-link" title="Requires authorized access to SuleimanBioinformatics private repository">
           Explore Code
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>

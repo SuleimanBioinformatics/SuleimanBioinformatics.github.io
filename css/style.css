@@ -1081,3 +1081,100 @@ body {
     display: block;
   }
 }
+
+/* ==========================================================================
+   Private Data Access Banner & Badges
+   ========================================================================== */
+.private-access-banner {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1.35rem 1.75rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.12) 0%, rgba(99, 102, 241, 0.12) 50%, rgba(0, 242, 254, 0.08) 100%);
+  border: 1px solid rgba(244, 63, 94, 0.38);
+  box-shadow: 0 8px 30px rgba(244, 63, 94, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.private-access-content {
+  flex: 1 1 520px;
+}
+
+.private-access-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.45rem;
+}
+
+.private-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(244, 63, 94, 0.2);
+  border: 1px solid rgba(244, 63, 94, 0.45);
+  color: #fb7185;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.private-access-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.35rem;
+}
+
+.private-access-desc-az {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.private-access-desc a,
+.private-access-desc-az a {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.private-access-desc a:hover,
+.private-access-desc-az a:hover {
+  text-decoration: underline;
+}
+
+.btn-request-access {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #f43f5e 0%, #8b5cf6 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(244, 63, 94, 0.35);
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.btn-request-access:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(244, 63, 94, 0.5);
+  filter: brightness(1.08);
+}
