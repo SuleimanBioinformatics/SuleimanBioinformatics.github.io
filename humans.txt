@@ -1,0 +1,15 @@
+/* TEAM */
+Founder & Lead Bioinformatician: Suleiman Hajizadeh
+Affiliation: Institute of Molecular Biology and Biotechnologies (IMBB), Azerbaijan
+Email: suleyman.hacizade1@gmail.com
+Website: https://suleimanbioinformatics.github.io/
+Personal GitHub: https://github.com/SuleimanHajizadeh
+Organization: https://github.com/SuleimanBioinformatics
+
+/* SITE */
+Standards: HTML5, CSS3, ES6+ JavaScript, WebGL / 2D Canvas, SVG, Schema.org JSON-LD
+Components: In-Browser GC Skew Analyzer, Kyte-Doolittle Hydropathy Engine, 3D Macromolecular Visualizer
+Hosting: GitHub Pages (SSL/TLS Enabled)
+Software License: MIT License
+Language: English, Azerbaijani
+Doctype: HTML5

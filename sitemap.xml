@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 1. Home / Main Portal -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://suleimanbioinformatics.github.io/assets/logo-emblem.png</image:loc>
+      <image:title>SuleimanBioinformatics Logo Emblem</image:title>
+      <image:caption>Pioneering Open Science in Computational Biology, Genomic Intelligence and Structural Biophysics</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Interactive Tools Hub -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/tools/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 3. Genomic GC-Skew Analyzer -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/tools/gc-skew/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 4. Kyte-Doolittle Hydropathy Profile Calculator -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/tools/hydropathy/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 5. 3D Biomolecular Structure Canvas Viewer -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/tools/protein-3d/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 6. Curricula & Knowledge Architecture Hub -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/curricula/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 7. 30-Module Biopython Curriculum -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/curricula/biopython/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 8. Cambridge University Machine Learning Mathematics -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/curricula/cambridge-ml/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 9. Research Vault & LLM Wiki Syntheses -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/research/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 10. Organization Ecosystem & Synchronized Repositories -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/ecosystem/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 11. Leadership, About Suleiman Hajizadeh & Private Data Access -->
+  <url>
+    <loc>https://suleimanbioinformatics.github.io/about/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>

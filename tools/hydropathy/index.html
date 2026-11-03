@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Kyte-Doolittle Hydropathy Profile Calculator Online | Transmembrane Predictor | SuleimanBioinformatics</title>
+  <meta name="title" content="Kyte-Doolittle Hydropathy Profile Calculator Online | Transmembrane Predictor | SuleimanBioinformatics" />
+  <meta name="description" content="Free online Kyte-Doolittle Amino Acid Hydropathy Profile Calculator. Compute hydrophobic indices across customizable sliding window radii, detect transmembrane helices (+1.6 cutoff), and inspect protein stability." />
+  <meta name="keywords" content="Kyte-Doolittle Hydropathy, Hydropathy Profile Calculator, Transmembrane Domain Predictor, Hydrophobicity Plot Online, Amino Acid Hydropathy, Bioinformatics Biophysics, SuleimanBioinformatics, Suleiman Hajizadeh" />
+  <meta name="author" content="Suleiman Hajizadeh" />
+  <link rel="canonical" href="https://suleimanbioinformatics.github.io/tools/hydropathy/" />
+
+  <!-- Crawling Directives -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SuleimanBioinformatics" />
+  <meta property="og:title" content="Kyte-Doolittle Hydropathy Profile Calculator Online | Transmembrane Predictor" />
+  <meta property="og:description" content="In-browser peptide hydropathy scoring across customizable window radii with transmembrane segment detection (+1.6 cutoff)." />
+  <meta property="og:url" content="https://suleimanbioinformatics.github.io/tools/hydropathy/" />
+  <meta property="og:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SuleimanHajizadeh" />
+  <meta name="twitter:title" content="Kyte-Doolittle Hydropathy Calculator Online | SuleimanBioinformatics" />
+  <meta name="twitter:description" content="Calculate peptide hydrophobicity, mean hydropathy, and locate transmembrane helices with interactive SVG visualization." />
+  <meta name="twitter:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="../../favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+  <link rel="manifest" href="../../manifest.json" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://suleimanbioinformatics.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://suleimanbioinformatics.github.io/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Kyte-Doolittle Hydropathy Profile",
+            "item": "https://suleimanbioinformatics.github.io/tools/hydropathy/"
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Kyte-Doolittle Hydropathy Profile Calculator & Transmembrane Predictor",
+        "applicationCategory": "ScientificApplication",
+        "operatingSystem": "All modern browsers",
+        "url": "https://suleimanbioinformatics.github.io/tools/hydropathy/",
+        "author": {
+          "@type": "Person",
+          "name": "Suleiman Hajizadeh",
+          "url": "https://github.com/SuleimanHajizadeh"
+        },
+        "description": "Computes amino acid hydropathy scores with dynamic window radii (2w+1) and visualizes transmembrane helices surpassing the +1.6 Kyte-Doolittle threshold.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../../" class="brand-link" aria-label="SuleimanBioinformatics Home">
+        <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" class="brand-logo-img" />
+        <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../../" class="nav-link">Home</a></li>
+          <li><a href="../" class="nav-link active">Tools</a></li>
+          <li><a href="../../curricula/" class="nav-link">Curricula</a></li>
+          <li><a href="../../research/" class="nav-link">Research</a></li>
+          <li><a href="../../ecosystem/" class="nav-link">Ecosystem</a></li>
+          <li><a href="../../about/" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="btn-icon" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="https://github.com/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          GitHub Org
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top:100px;min-height:85vh;">
+    <div class="container">
+      
+      <!-- Breadcrumb Nav -->
+      <nav aria-label="Breadcrumb" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;">
+        <a href="../../" style="color:var(--text-secondary);text-decoration:none;">Home</a> &gt; 
+        <a href="../" style="color:var(--text-secondary);text-decoration:none;">Tools</a> &gt; 
+        <span style="color:var(--accent-cyan);">Kyte-Doolittle Hydropathy Profile</span>
+      </nav>
+
+      <!-- Tool Header -->
+      <div style="margin-bottom:2rem;">
+        <span class="section-badge">Structural Biophysics Engine</span>
+        <h1 style="font-size:2.4rem;font-weight:800;margin:0.5rem 0;">Kyte-Doolittle Hydropathy Profile Calculator</h1>
+        <p style="color:var(--text-secondary);max-width:850px;font-size:1.05rem;line-height:1.6;">
+          Client-side amino acid hydropathy evaluator. Derives continuous hydrophobicity curves over sliding windows of radius $w$ ($2w+1$ span) to identify transmembrane helices (scores $\ge +1.6$), hydrophobic cores, and solvent-exposed hydrophilic loops.
+        </p>
+      </div>
+
+      <!-- Live Tool Grid -->
+      <div class="tool-panel active" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:2rem;">
+        <div class="tool-grid">
+          <div class="tool-input-group">
+            <div class="input-label">
+              <span>Amino Acid Sequence (1-Letter Code):</span>
+              <div class="preset-btns">
+                <button class="preset-btn" data-pep-preset="insulin_a">Insulin Chain A</button>
+                <button class="preset-btn" data-pep-preset="transmembrane">Transmembrane</button>
+                <button class="preset-btn" data-pep-preset="signal_peptide">Signal Peptide</button>
+              </div>
+            </div>
+            <textarea id="peptideSeqInput" class="sequence-textarea" spellcheck="false" placeholder="Paste 1-letter amino acid sequence..."></textarea>
+
+            <div class="slider-group">
+              <label for="kdWindowSlider" style="font-size:0.85rem;color:var(--text-secondary);">Window Radius ($2w+1$):</label>
+              <input type="range" id="kdWindowSlider" min="5" max="21" step="2" value="9" />
+              <span id="kdWindowVal" class="slider-val">9 aa</span>
+            </div>
+          </div>
+
+          <div class="tool-output">
+            <div class="metrics-summary-row">
+              <div class="mini-metric">
+                <div id="metricPepLen" class="mini-metric-val">0</div>
+                <div class="mini-metric-lbl">Residues</div>
+              </div>
+              <div class="mini-metric">
+                <div id="metricAvgHydropathy" class="mini-metric-val">0.00</div>
+                <div class="mini-metric-lbl">Mean Hydropathy</div>
+              </div>
+              <div class="mini-metric">
+                <div id="metricMaxPeak" class="mini-metric-val">0.00</div>
+                <div class="mini-metric-lbl">Max Peak</div>
+              </div>
+            </div>
+
+            <!-- SVG Chart -->
+            <div class="chart-wrapper">
+              <div id="hydropathyChartBox"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theory Section -->
+      <section style="margin-top:3.5rem;">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:1rem;">🔬 Biophysical Background: Kyte &amp; Doolittle Scale (1982)</h2>
+        <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:2rem;line-height:1.7;color:var(--text-secondary);">
+          <p style="margin-bottom:1rem;">
+            The Kyte-Doolittle scale assigns a hydropathy value to each of the 20 natural amino acids based on water-vapor transfer free energies and interior-versus-exterior distribution in known protein crystal structures. Values range from <strong>Isoleucine (+4.5)</strong> and <strong>Valine (+4.2)</strong> down to <strong>Arginine (-4.5)</strong> and <strong>Lysine (-3.9)</strong>.
+          </p>
+          <div style="background:rgba(99,102,241,0.08);border-left:4px solid var(--accent-indigo);padding:1rem 1.5rem;margin:1.5rem 0;color:var(--text-primary);font-family:var(--font-mono);">
+            $$H_i = \frac{1}{2w + 1} \sum_{j=-w}^{w} h_{i+j}$$
+          </div>
+          <p>
+            When utilizing a window size of 19–21 residues (characteristic length of an alpha helix traversing a lipid bilayer), any continuous segment scoring <strong>above +1.6</strong> strongly indicates a <strong>transmembrane spanning domain</strong>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Private Data Access Callout -->
+      <div class="private-access-banner" style="margin-top:3rem;">
+        <div class="private-access-content">
+          <div class="private-access-title">
+            <span class="private-badge-pill">🔒 Private Data &amp; Pipelines</span>
+            <span>Miyazawa-Jernigan Potentials &amp; Advanced Protein Biophysics</span>
+          </div>
+          <p class="private-access-desc">
+            Production scripts (<code style="color:var(--accent-cyan);">starter_kit/protein_computational_analysis.py</code>) incorporating contact energy grids and packing density calculations are hosted in our private backend repository.
+          </p>
+        </div>
+        <a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20Protein%20Biophysics%20Scripts" class="btn-request-access">
+          Request Access (Email)
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../../" class="brand-link">
+            <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" style="width:30px;height:30px;" />
+            <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+          </a>
+          <p>
+            An open-science initiative providing computational biology frameworks, algorithmic starter kits, and structured bioinformatics education.
+          </p>
+          <div style="margin-top:0.85rem;font-size:0.85rem;color:#fb7185;">
+            🔒 Core datasets are private. Contact <a href="mailto:suleyman.hacizade1@gmail.com" style="color:var(--accent-cyan);text-decoration:underline;">suleyman.hacizade1@gmail.com</a> for access.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="../gc-skew/">Genomic GC-Skew Analyzer</a></li>
+            <li><a href="./">Kyte-Doolittle Hydropathy</a></li>
+            <li><a href="../protein-3d/">3D Protein Canvas Viewer</a></li>
+            <li><a href="../">Tools Hub Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Curricula &amp; Research</h4>
+          <ul class="footer-links">
+            <li><a href="../../curricula/biopython/">30-Module Biopython</a></li>
+            <li><a href="../../curricula/cambridge-ml/">Cambridge ML Math</a></li>
+            <li><a href="../../research/">Research Vault &amp; Wiki</a></li>
+            <li><a href="../../curricula/">Curricula Explorer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20SuleimanBioinformatics%20Private%20Repository">Core Backend <span style="font-size:0.75rem;color:#fb7185;">(🔒 Private)</span></a></li>
+            <li><a href="../../ecosystem/">Ecosystem &amp; Repos</a></li>
+            <li><a href="../../about/">About Suleiman Hajizadeh</a></li>
+            <li><a href="../../about/#privacy">Private Data Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 SuleimanBioinformatics. Released under the MIT License.</div>
+        <div>Built for the global bioinformatics &amp; computational biology community.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/tools.js"></script>
+  <script src="../../js/app.js"></script>
+</body>
+</html>

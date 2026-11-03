@@ -1,12 +1,19 @@
 {
-  "name": "SuleimanBioinformatics",
+  "name": "SuleimanBioinformatics | Computational Biology & Genomic Intelligence",
   "short_name": "SuleimanBio",
-  "description": "Computational Biology, Genomic Intelligence & Biophysics Hub",
+  "description": "Centralized open-science hub for computational genomics, biophysics, Kyte-Doolittle hydropathy, GC-skew analysis, 3D molecular structures, and Cambridge ML mathematics.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#070b14",
   "theme_color": "#00f2fe",
+  "categories": ["education", "science", "utilities", "productivity"],
+  "lang": "en",
   "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
     {
       "src": "favicon.png",
       "sizes": "64x64",
@@ -21,6 +28,43 @@
       "src": "assets/logo-emblem.png",
       "sizes": "512x512",
       "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "GC-Skew Analyzer",
+      "short_name": "GC-Skew",
+      "description": "Calculate DNA GC-skew sliding window and bacterial oriC replication origin.",
+      "url": "./tools/gc-skew/index.html",
+      "icons": [{ "src": "favicon.png", "sizes": "64x64" }]
+    },
+    {
+      "name": "Kyte-Doolittle Profile",
+      "short_name": "Hydropathy",
+      "description": "Compute amino acid hydropathy and transmembrane segment prediction.",
+      "url": "./tools/hydropathy/index.html",
+      "icons": [{ "src": "favicon.png", "sizes": "64x64" }]
+    },
+    {
+      "name": "3D Protein Viewer",
+      "short_name": "3D Canvas",
+      "description": "Interactive client-side 3D macromolecular coordinate viewer.",
+      "url": "./tools/protein-3d/index.html",
+      "icons": [{ "src": "favicon.png", "sizes": "64x64" }]
+    },
+    {
+      "name": "30-Module Biopython",
+      "short_name": "Biopython",
+      "description": "Systematic computational genomics and structural biology curriculum.",
+      "url": "./curricula/biopython/index.html",
+      "icons": [{ "src": "favicon.png", "sizes": "64x64" }]
+    },
+    {
+      "name": "Cambridge ML Math",
+      "short_name": "Cambridge ML",
+      "description": "University of Cambridge Mathematics of Machine Learning course notes and R proofs.",
+      "url": "./curricula/cambridge-ml/index.html",
+      "icons": [{ "src": "favicon.png", "sizes": "64x64" }]
     }
   ]
 }

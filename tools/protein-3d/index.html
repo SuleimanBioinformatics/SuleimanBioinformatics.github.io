@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Interactive 3D Biomolecular Structure Viewer Online | WebGL Canvas | SuleimanBioinformatics</title>
+  <meta name="title" content="Interactive 3D Biomolecular Structure Viewer Online | WebGL Canvas | SuleimanBioinformatics" />
+  <meta name="description" content="Free in-browser 3D Macromolecular Structure Canvas Viewer. Render PDB coordinates (Insulin 1COH, Alpha Helix, DNA Double Helix) with real-time orbit controls, rotation, and ribbon geometry." />
+  <meta name="keywords" content="3D Protein Viewer, Macromolecular Structure Viewer, PDB Viewer Online, Biomolecular Canvas, WebGL Protein Viewer, Structural Biology Tools, SuleimanBioinformatics, Suleiman Hajizadeh" />
+  <meta name="author" content="Suleiman Hajizadeh" />
+  <link rel="canonical" href="https://suleimanbioinformatics.github.io/tools/protein-3d/" />
+
+  <!-- Crawling Directives -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SuleimanBioinformatics" />
+  <meta property="og:title" content="Interactive 3D Biomolecular Structure Viewer Online | WebGL Canvas" />
+  <meta property="og:description" content="Client-side 3D canvas visualizer rendering macromolecular structures with interactive orbit rotation, zoom, and ribbon mechanics." />
+  <meta property="og:url" content="https://suleimanbioinformatics.github.io/tools/protein-3d/" />
+  <meta property="og:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SuleimanHajizadeh" />
+  <meta name="twitter:title" content="3D Biomolecular Structure Canvas Viewer | SuleimanBioinformatics" />
+  <meta name="twitter:description" content="Pure in-browser 3D macromolecular rendering engine for proteins, peptides, and nucleic acids." />
+  <meta name="twitter:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="../../favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+  <link rel="manifest" href="../../manifest.json" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://suleimanbioinformatics.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://suleimanbioinformatics.github.io/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "3D Biomolecular Structure Viewer",
+            "item": "https://suleimanbioinformatics.github.io/tools/protein-3d/"
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "3D Biomolecular Structure Canvas Viewer",
+        "applicationCategory": "ScientificApplication",
+        "operatingSystem": "All modern browsers",
+        "url": "https://suleimanbioinformatics.github.io/tools/protein-3d/",
+        "author": {
+          "@type": "Person",
+          "name": "Suleiman Hajizadeh",
+          "url": "https://github.com/SuleimanHajizadeh"
+        },
+        "description": "Interactive client-side 3D renderer displaying macromolecular coordinates (Insulin 1COH, Alpha-helix, DNA double helix) with real-time orbit rotation and zoom.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../../" class="brand-link" aria-label="SuleimanBioinformatics Home">
+        <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" class="brand-logo-img" />
+        <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../../" class="nav-link">Home</a></li>
+          <li><a href="../" class="nav-link active">Tools</a></li>
+          <li><a href="../../curricula/" class="nav-link">Curricula</a></li>
+          <li><a href="../../research/" class="nav-link">Research</a></li>
+          <li><a href="../../ecosystem/" class="nav-link">Ecosystem</a></li>
+          <li><a href="../../about/" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="btn-icon" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="https://github.com/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          GitHub Org
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top:100px;min-height:85vh;">
+    <div class="container">
+      
+      <!-- Breadcrumb Nav -->
+      <nav aria-label="Breadcrumb" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;">
+        <a href="../../" style="color:var(--text-secondary);text-decoration:none;">Home</a> &gt; 
+        <a href="../" style="color:var(--text-secondary);text-decoration:none;">Tools</a> &gt; 
+        <span style="color:var(--accent-cyan);">3D Biomolecular Structure Viewer</span>
+      </nav>
+
+      <!-- Tool Header -->
+      <div style="margin-bottom:2rem;">
+        <span class="section-badge">WebGL / 2D Canvas 3D Graphics</span>
+        <h1 style="font-size:2.4rem;font-weight:800;margin:0.5rem 0;">Interactive 3D Biomolecular Structure Viewer</h1>
+        <p style="color:var(--text-secondary);max-width:850px;font-size:1.05rem;line-height:1.6;">
+          Zero-dependency client-side 3D renderer. Computes real-time 3D affine matrix transformations, depth-sorting, perspective projections, and directional shading to display atomic chains and ribbon backbones in your browser.
+        </p>
+      </div>
+
+      <!-- Live 3D Canvas Box -->
+      <div class="protein-viewer-box" style="margin-bottom:2rem;">
+        <canvas id="proteinCanvas3D" class="protein-canvas"></canvas>
+
+        <div class="viewer-overlay">
+          <span id="viewerStructLabel" class="viewer-tag">Human Insulin (1COH Model)</span>
+          <span class="viewer-tag" style="color:var(--text-muted);font-size:0.75rem;">Interactive 3D: Click &amp; Drag to Rotate · Scroll to Zoom</span>
+        </div>
+
+        <div class="viewer-controls">
+          <button class="viewer-btn active" data-struct-preset="insulin">Insulin (1COH)</button>
+          <button class="viewer-btn" data-struct-preset="helix">Alpha Helix</button>
+          <button class="viewer-btn" data-struct-preset="dna">DNA Double Helix</button>
+          <button id="resetViewBtn" class="viewer-btn" title="Reset View">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- Instructions & Details -->
+      <section style="margin-top:2.5rem;">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:1rem;">🕹️ Controls &amp; Rendering Architecture</h2>
+        <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:2rem;line-height:1.7;color:var(--text-secondary);">
+          <ul style="list-style:disc;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+            <li><strong>Rotation:</strong> Click and drag anywhere on the 3D canvas with your mouse (or drag with your finger on touchscreens) to rotate azimuth and elevation angles.</li>
+            <li><strong>Zoom:</strong> Scroll your mouse wheel or pinch-to-zoom to smoothly adjust focal distance and scale.</li>
+            <li><strong>Presets:</strong> Toggle between Human Insulin hexamer/monomer coordinates (1COH), idealized right-handed $\alpha$-helix ($3.6$ residues per turn, $1.5$ &Aring; rise), and canonical B-DNA double helix.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Private Data Access Callout -->
+      <div class="private-access-banner" style="margin-top:3rem;">
+        <div class="private-access-content">
+          <div class="private-access-title">
+            <span class="private-badge-pill">🔒 Private Data &amp; Pipelines</span>
+            <span>AlphaFold DB Coordinate Fetching &amp; mmCIF Parsers</span>
+          </div>
+          <p class="private-access-desc">
+            Production Python tools (<code style="color:var(--accent-cyan);">starter_kit/protein_3d_metrics.py</code>) parsing AlphaFold per-residue pLDDT matrices and generating publication-ready matplotlib 3D backbones are stored in our private repository.
+          </p>
+        </div>
+        <a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20Protein%203D%20Scripts" class="btn-request-access">
+          Request Access (Email)
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../../" class="brand-link">
+            <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" style="width:30px;height:30px;" />
+            <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+          </a>
+          <p>
+            An open-science initiative providing computational biology frameworks, algorithmic starter kits, and structured bioinformatics education.
+          </p>
+          <div style="margin-top:0.85rem;font-size:0.85rem;color:#fb7185;">
+            🔒 Core datasets are private. Contact <a href="mailto:suleyman.hacizade1@gmail.com" style="color:var(--accent-cyan);text-decoration:underline;">suleyman.hacizade1@gmail.com</a> for access.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="../gc-skew/">Genomic GC-Skew Analyzer</a></li>
+            <li><a href="../hydropathy/">Kyte-Doolittle Hydropathy</a></li>
+            <li><a href="./">3D Protein Canvas Viewer</a></li>
+            <li><a href="../">Tools Hub Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Curricula &amp; Research</h4>
+          <ul class="footer-links">
+            <li><a href="../../curricula/biopython/">30-Module Biopython</a></li>
+            <li><a href="../../curricula/cambridge-ml/">Cambridge ML Math</a></li>
+            <li><a href="../../research/">Research Vault &amp; Wiki</a></li>
+            <li><a href="../../curricula/">Curricula Explorer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20SuleimanBioinformatics%20Private%20Repository">Core Backend <span style="font-size:0.75rem;color:#fb7185;">(🔒 Private)</span></a></li>
+            <li><a href="../../ecosystem/">Ecosystem &amp; Repos</a></li>
+            <li><a href="../../about/">About Suleiman Hajizadeh</a></li>
+            <li><a href="../../about/#privacy">Private Data Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 SuleimanBioinformatics. Released under the MIT License.</div>
+        <div>Built for the global bioinformatics &amp; computational biology community.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/tools.js"></script>
+  <script src="../../js/app.js"></script>
+</body>
+</html>

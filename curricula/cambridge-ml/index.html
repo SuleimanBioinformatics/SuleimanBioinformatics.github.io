@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cambridge University Mathematics of Machine Learning Series | SuleimanBioinformatics</title>
+  <meta name="title" content="Cambridge University Mathematics of Machine Learning Series | SuleimanBioinformatics" />
+  <meta name="description" content="Lecture notes, mathematical proofs, and R implementations from the University of Cambridge Mathematics of Machine Learning program. Covers Bias-Variance Tradeoff, RKHS Hilbert Spaces, L1 vs L2 regularization, AdaBoost, and Gradient Boosting." />
+  <meta name="keywords" content="Cambridge Mathematics of Machine Learning, Cambridge ML Math, Bias-Variance Tradeoff, RKHS, Reproducing Kernel Hilbert Spaces, L1 vs L2 Regularization, AdaBoost Theory, Gradient Boosting Proofs, Statistical Learning Theory, SuleimanBioinformatics, Suleiman Hajizadeh" />
+  <meta name="author" content="Suleiman Hajizadeh" />
+  <link rel="canonical" href="https://suleimanbioinformatics.github.io/curricula/cambridge-ml/" />
+
+  <!-- Crawling Directives -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="SuleimanBioinformatics" />
+  <meta property="og:title" content="Cambridge University Mathematics of Machine Learning Series" />
+  <meta property="og:description" content="Mathematical foundations, theorem proofs, and R implementations bridging Cambridge ML theory with high-dimensional genomics." />
+  <meta property="og:url" content="https://suleimanbioinformatics.github.io/curricula/cambridge-ml/" />
+  <meta property="og:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SuleimanHajizadeh" />
+  <meta name="twitter:title" content="Cambridge ML Mathematics Series | SuleimanBioinformatics" />
+  <meta name="twitter:description" content="Mathematical proofs and R lecture implementations from Cambridge University ML Mathematics." />
+  <meta name="twitter:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="../../favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+  <link rel="manifest" href="../../manifest.json" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://suleimanbioinformatics.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Curricula",
+            "item": "https://suleimanbioinformatics.github.io/curricula/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cambridge ML Mathematics",
+            "item": "https://suleimanbioinformatics.github.io/curricula/cambridge-ml/"
+          }
+        ]
+      },
+      {
+        "@type": "Course",
+        "name": "University of Cambridge Mathematics of Machine Learning Series",
+        "courseCode": "CAM-ML",
+        "description": "Lecture notes, mathematical theorem proofs, and R simulations covering regularized loss minimization (L1 vs L2), bias-variance decomposition, RKHS function spaces, AdaBoost, and gradient boosting trees.",
+        "provider": {
+          "@type": "Organization",
+          "name": "SuleimanBioinformatics",
+          "url": "https://suleimanbioinformatics.github.io/"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Suleiman Hajizadeh",
+          "url": "https://github.com/SuleimanHajizadeh"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../../" class="brand-link" aria-label="SuleimanBioinformatics Home">
+        <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" class="brand-logo-img" />
+        <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../../" class="nav-link">Home</a></li>
+          <li><a href="../../tools/" class="nav-link">Tools</a></li>
+          <li><a href="../" class="nav-link active">Curricula</a></li>
+          <li><a href="../../research/" class="nav-link">Research</a></li>
+          <li><a href="../../ecosystem/" class="nav-link">Ecosystem</a></li>
+          <li><a href="../../about/" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="btn-icon" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="https://github.com/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          GitHub Org
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top:100px;min-height:85vh;">
+    <div class="container">
+      
+      <nav aria-label="Breadcrumb" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;">
+        <a href="../../" style="color:var(--text-secondary);text-decoration:none;">Home</a> &gt; 
+        <a href="../" style="color:var(--text-secondary);text-decoration:none;">Curricula</a> &gt; 
+        <span style="color:var(--accent-cyan);">Cambridge ML Mathematics</span>
+      </nav>
+
+      <div style="margin-bottom:3rem;">
+        <span class="section-badge">Theoretical Foundations</span>
+        <h1 style="font-size:2.5rem;font-weight:800;margin:0.5rem 0;">University of Cambridge: Mathematics of Machine Learning</h1>
+        <p style="color:var(--text-secondary);max-width:850px;font-size:1.1rem;line-height:1.6;">
+          Bridging Cambridge's theoretical statistical learning theory with high-dimensional $p \gg n$ cancer genomics, transcriptomics, and biological sequence modeling.
+        </p>
+      </div>
+
+      <!-- Core Modules Grid -->
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+        
+        <!-- Topic 1 -->
+        <article class="eco-card" style="padding:2rem;">
+          <h2 style="font-size:1.4rem;color:var(--accent-cyan);margin-bottom:0.75rem;">Lecture 03: Bias-Variance Decomposition &amp; K-Fold Cross-Validation</h2>
+          <p style="color:var(--text-secondary);line-height:1.6;">
+            Decomposes expected generalization error under squared loss into irreducible noise $\sigma^2$, estimation variance $\text{Var}(\hat{f}(x))$, and model bias $\text{Bias}^2(\hat{f}(x))$. Explores optimal hyperparameter selection via $k$-fold cross-validation in small sample size biological cohorts.
+          </p>
+        </article>
+
+        <!-- Topic 2 -->
+        <article class="eco-card" style="padding:2rem;">
+          <h2 style="font-size:1.4rem;color:var(--accent-blue);margin-bottom:0.75rem;">Lecture 09: Reproducing Kernel Hilbert Spaces (RKHS) &amp; Representer Theorem</h2>
+          <p style="color:var(--text-secondary);line-height:1.6;">
+            Infinite-dimensional function spaces and the Kimeldorf-Wahba Representer Theorem. Proves that any regularized empirical risk minimizer in an RKHS admits a finite expansion $\hat{f}(x) = \sum_{i=1}^n c_i K(x, x_i)$, forming the basis for non-linear genomic support vector machines and Gaussian processes.
+          </p>
+        </article>
+
+        <!-- Topic 3 -->
+        <article class="eco-card" style="padding:2rem;">
+          <h2 style="font-size:1.4rem;color:var(--accent-purple);margin-bottom:0.75rem;">Lecture 12: High-Dimensional Sparsity: L1 (Lasso) vs. L2 (Ridge) Regularization</h2>
+          <p style="color:var(--text-secondary);line-height:1.6;">
+            Geometric and analytical proofs of sparsity induction via singular corners of the $\ell_1$ norm unit ball. Essential for biomarker discovery where candidate genes ($p \approx 20,000$) vastly exceed patient sample counts ($n \approx 100$).
+          </p>
+        </article>
+
+        <!-- Topic 4 -->
+        <article class="eco-card" style="padding:2rem;">
+          <h2 style="font-size:1.4rem;color:var(--accent-pink);margin-bottom:0.75rem;">Lecture 15–16: AdaBoost, Functional Gradient Descent &amp; Lasso Equivalence</h2>
+          <p style="color:var(--text-secondary);line-height:1.6;">
+            Exponential loss minimization and reweighting dynamics. Features the landmark proof showing that infinitesimal forward stagewise boosting with small learning rate $\epsilon \to 0$ traces the identical continuous regularization trajectory as the Lasso.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Private Repository Callout -->
+      <div class="private-access-banner" style="margin-top:3.5rem;">
+        <div class="private-access-content">
+          <div class="private-access-title">
+            <span class="private-badge-pill">🔒 Private Repository</span>
+            <span>R Proof Scripts &amp; Mathematical Notes</span>
+          </div>
+          <p class="private-access-desc">
+            Complete R lecture scripts, problem set proofs, and simulation files are stored in our private backend repository.
+          </p>
+        </div>
+        <a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20Cambridge%20ML%20Math%20Lectures" class="btn-request-access">
+          Request Access (Email)
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../../" class="brand-link">
+            <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" style="width:30px;height:30px;" />
+            <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+          </a>
+          <p>
+            An open-science initiative providing computational biology frameworks, algorithmic starter kits, and structured bioinformatics education.
+          </p>
+          <div style="margin-top:0.85rem;font-size:0.85rem;color:#fb7185;">
+            🔒 Core datasets are private. Contact <a href="mailto:suleyman.hacizade1@gmail.com" style="color:var(--accent-cyan);text-decoration:underline;">suleyman.hacizade1@gmail.com</a> for access.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="../../tools/gc-skew/">Genomic GC-Skew Analyzer</a></li>
+            <li><a href="../../tools/hydropathy/">Kyte-Doolittle Hydropathy</a></li>
+            <li><a href="../../tools/protein-3d/">3D Protein Canvas Viewer</a></li>
+            <li><a href="../../tools/">Tools Hub Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Curricula &amp; Research</h4>
+          <ul class="footer-links">
+            <li><a href="../biopython/">30-Module Biopython</a></li>
+            <li><a href="./">Cambridge ML Math</a></li>
+            <li><a href="../../research/">Research Vault &amp; Wiki</a></li>
+            <li><a href="../">Curricula Explorer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20SuleimanBioinformatics%20Private%20Repository">Core Backend <span style="font-size:0.75rem;color:#fb7185;">(🔒 Private)</span></a></li>
+            <li><a href="../../ecosystem/">Ecosystem &amp; Repos</a></li>
+            <li><a href="../../about/">About Suleiman Hajizadeh</a></li>
+            <li><a href="../../about/#privacy">Private Data Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 SuleimanBioinformatics. Released under the MIT License.</div>
+        <div>Built for the global bioinformatics &amp; computational biology community.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/app.js"></script>
+</body>
+</html>

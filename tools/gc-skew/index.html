@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Genomic GC-Skew Analyzer Online | Bacterial OriC Finder | SuleimanBioinformatics</title>
+  <meta name="title" content="Genomic GC-Skew Analyzer Online | Bacterial OriC Finder | SuleimanBioinformatics" />
+  <meta name="description" content="Free online in-browser Genomic GC-Skew Analyzer and sliding-window plotter. Calculate (C-G)/(C+G), identify bacterial replication origins (oriC), and analyze nucleotide frequencies instantly." />
+  <meta name="keywords" content="GC Skew Analyzer, Genomic GC Skew, Bacterial OriC Finder, DNA Replication Origin, Sliding Window GC Skew, Bioinformatics Tools Online, SuleimanBioinformatics, Suleiman Hajizadeh, Bio.Seq, Nucleotide Frequencies" />
+  <meta name="author" content="Suleiman Hajizadeh" />
+  <link rel="canonical" href="https://suleimanbioinformatics.github.io/tools/gc-skew/" />
+
+  <!-- Crawling Directives -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SuleimanBioinformatics" />
+  <meta property="og:title" content="Genomic GC-Skew Analyzer Online | Bacterial OriC Finder" />
+  <meta property="og:description" content="Calculate DNA GC-skew sliding windows (C-G)/(C+G), nucleotide frequencies, and replication origin inflection coordinates in real time." />
+  <meta property="og:url" content="https://suleimanbioinformatics.github.io/tools/gc-skew/" />
+  <meta property="og:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SuleimanHajizadeh" />
+  <meta name="twitter:title" content="Genomic GC-Skew Analyzer Online | SuleimanBioinformatics" />
+  <meta name="twitter:description" content="In-browser GC-skew sliding window calculator and interactive SVG vector visualizer for replication origins." />
+  <meta name="twitter:image" content="https://suleimanbioinformatics.github.io/assets/logo-emblem.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="../../favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+  <link rel="manifest" href="../../manifest.json" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://suleimanbioinformatics.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://suleimanbioinformatics.github.io/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Genomic GC-Skew Analyzer",
+            "item": "https://suleimanbioinformatics.github.io/tools/gc-skew/"
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Genomic GC-Skew Analyzer & Bacterial OriC Finder",
+        "applicationCategory": "ScientificApplication",
+        "operatingSystem": "All modern browsers",
+        "url": "https://suleimanbioinformatics.github.io/tools/gc-skew/",
+        "author": {
+          "@type": "Person",
+          "name": "Suleiman Hajizadeh",
+          "url": "https://github.com/SuleimanHajizadeh"
+        },
+        "description": "Calculates sliding-window GC-skew (C-G)/(C+G), nucleotide frequencies, and replication origin (oriC) minimum inflection coordinates for genomic sequences.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../../" class="brand-link" aria-label="SuleimanBioinformatics Home">
+        <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" class="brand-logo-img" />
+        <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../../" class="nav-link">Home</a></li>
+          <li><a href="../" class="nav-link active">Tools</a></li>
+          <li><a href="../../curricula/" class="nav-link">Curricula</a></li>
+          <li><a href="../../research/" class="nav-link">Research</a></li>
+          <li><a href="../../ecosystem/" class="nav-link">Ecosystem</a></li>
+          <li><a href="../../about/" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="btn-icon" aria-label="Toggle theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="https://github.com/SuleimanBioinformatics" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          GitHub Org
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top:100px;min-height:85vh;">
+    <div class="container">
+      
+      <!-- Breadcrumb Nav -->
+      <nav aria-label="Breadcrumb" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;">
+        <a href="../../" style="color:var(--text-secondary);text-decoration:none;">Home</a> &gt; 
+        <a href="../" style="color:var(--text-secondary);text-decoration:none;">Tools</a> &gt; 
+        <span style="color:var(--accent-cyan);">Genomic GC-Skew Analyzer</span>
+      </nav>
+
+      <!-- Tool Header -->
+      <div style="margin-bottom:2rem;">
+        <span class="section-badge">Client-Side Genomics Engine</span>
+        <h1 style="font-size:2.4rem;font-weight:800;margin:0.5rem 0;">Genomic GC-Skew Analyzer &amp; Bacterial OriC Finder</h1>
+        <p style="color:var(--text-secondary);max-width:850px;font-size:1.05rem;line-height:1.6;">
+          Real-time sliding-window calculator for DNA sequences. GC-skew ($S_{GC} = \frac{C - G}{C + G}$) is an asymmetry in nucleotide distribution between leading and lagging replication strands, providing a proven signature for discovering bacterial origins of replication (<em>oriC</em>) and termination sites (<em>ter</em>).
+        </p>
+      </div>
+
+      <!-- Live Tool Grid -->
+      <div class="tool-panel active" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:2rem;">
+        <div class="tool-grid">
+          <div class="tool-input-group">
+            <div class="input-label">
+              <span>DNA Sequence (Raw or FASTA):</span>
+              <div class="preset-btns">
+                <button class="preset-btn" data-dna-preset="ecoli_ori">E. coli oriC</button>
+                <button class="preset-btn" data-dna-preset="tnbc_exon">TNBC Exon</button>
+                <button class="preset-btn" data-dna-preset="synthetic_skew">High Skew</button>
+              </div>
+            </div>
+            <textarea id="genomicSeqInput" class="sequence-textarea" spellcheck="false" placeholder="Paste FASTA or raw DNA sequence..."></textarea>
+
+            <div class="slider-group">
+              <label for="gcWindowSlider" style="font-size:0.85rem;color:var(--text-secondary);">Window Size:</label>
+              <input type="range" id="gcWindowSlider" min="20" max="150" step="10" value="50" />
+              <span id="gcWindowVal" class="slider-val">50 bp</span>
+            </div>
+          </div>
+
+          <div class="tool-output">
+            <div class="metrics-summary-row">
+              <div class="mini-metric">
+                <div id="metricSeqLen" class="mini-metric-val">0</div>
+                <div class="mini-metric-lbl">Length (bp)</div>
+              </div>
+              <div class="mini-metric">
+                <div id="metricGCContent" class="mini-metric-val">0%</div>
+                <div class="mini-metric-lbl">GC Content</div>
+              </div>
+              <div class="mini-metric">
+                <div id="metricGCSkew" class="mini-metric-val">0.00</div>
+                <div class="mini-metric-lbl">GC Skew</div>
+              </div>
+              <div class="mini-metric">
+                <div id="metricBaseCounts" class="mini-metric-val" style="font-size:0.85rem;padding-top:4px;">-</div>
+                <div class="mini-metric-lbl">Base Counts</div>
+              </div>
+            </div>
+
+            <!-- SVG Chart -->
+            <div class="chart-wrapper">
+              <div id="gcSkewChartBox"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scientific Background & Formula -->
+      <section style="margin-top:3.5rem;">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:1rem;">🧬 Scientific Theory &amp; Mathematical Formulation</h2>
+        <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:2rem;line-height:1.7;color:var(--text-secondary);">
+          <p style="margin-bottom:1rem;">
+            In circular bacterial chromosomes, DNA replication initiates bidirectionally at a single origin of replication (<strong>oriC</strong>) and concludes at the replication terminus (<strong>ter</strong>). Due to mutational asymmetry, spontaneous deamination of cytosine to uracil on the single-stranded leading strand leads to an excess of Guanine over Cytosine.
+          </p>
+          <div style="background:rgba(0,242,254,0.08);border-left:4px solid var(--accent-cyan);padding:1rem 1.5rem;margin:1.5rem 0;color:var(--text-primary);font-family:var(--font-mono);">
+            $$\Delta S_{GC} = \frac{C - G}{C + G}$$
+          </div>
+          <p>
+            When scanning a circular bacterial genome in sliding windows, the cumulative GC-skew curve reaches a <strong>global minimum</strong> at the origin of replication ($oriC$) and a <strong>global maximum</strong> at the replication terminus ($ter$).
+          </p>
+        </div>
+      </section>
+
+      <!-- Private Data Access Callout -->
+      <div class="private-access-banner" style="margin-top:3rem;">
+        <div class="private-access-content">
+          <div class="private-access-title">
+            <span class="private-badge-pill">🔒 Private Data &amp; Pipelines</span>
+            <span>Looking for High-Throughput Batch GC-Skew Scripts?</span>
+          </div>
+          <p class="private-access-desc">
+            Production Python scripts (<code style="color:var(--accent-cyan);">starter_kit/genomic_analyzer.py</code>) and automated bacterial chromosome scanning pipelines are available in our private core repository. To request research access:
+          </p>
+        </div>
+        <a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20Genomic%20Analyzer%20Scripts" class="btn-request-access">
+          Request Access (Email)
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../../" class="brand-link">
+            <img src="../../assets/logo-icon.svg" alt="SuleimanBioinformatics Logo" style="width:30px;height:30px;" />
+            <span>Suleiman<span class="brand-title-accent">Bioinformatics</span></span>
+          </a>
+          <p>
+            An open-science initiative providing computational biology frameworks, algorithmic starter kits, and structured bioinformatics education.
+          </p>
+          <div style="margin-top:0.85rem;font-size:0.85rem;color:#fb7185;">
+            🔒 Core datasets are private. Contact <a href="mailto:suleyman.hacizade1@gmail.com" style="color:var(--accent-cyan);text-decoration:underline;">suleyman.hacizade1@gmail.com</a> for access.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="./">Genomic GC-Skew Analyzer</a></li>
+            <li><a href="../hydropathy/">Kyte-Doolittle Hydropathy</a></li>
+            <li><a href="../protein-3d/">3D Protein Canvas Viewer</a></li>
+            <li><a href="../">Tools Hub Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Curricula &amp; Research</h4>
+          <ul class="footer-links">
+            <li><a href="../../curricula/biopython/">30-Module Biopython</a></li>
+            <li><a href="../../curricula/cambridge-ml/">Cambridge ML Math</a></li>
+            <li><a href="../../research/">Research Vault &amp; Wiki</a></li>
+            <li><a href="../../curricula/">Curricula Explorer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:suleyman.hacizade1@gmail.com?subject=Access%20Request%20-%20SuleimanBioinformatics%20Private%20Repository">Core Backend <span style="font-size:0.75rem;color:#fb7185;">(🔒 Private)</span></a></li>
+            <li><a href="../../ecosystem/">Ecosystem &amp; Repos</a></li>
+            <li><a href="../../about/">About Suleiman Hajizadeh</a></li>
+            <li><a href="../../about/#privacy">Private Data Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 SuleimanBioinformatics. Released under the MIT License.</div>
+        <div>Built for the global bioinformatics &amp; computational biology community.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/tools.js"></script>
+  <script src="../../js/app.js"></script>
+</body>
+</html>
